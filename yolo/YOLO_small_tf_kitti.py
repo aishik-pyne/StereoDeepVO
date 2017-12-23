@@ -76,7 +76,7 @@ class YOLO_TF:
 		self.fc_32 = self.fc_layer(32,self.fc_30,1470,flat=False,linear=True)
 		print((self.fc_32))
 		self.sess = tf.Session()
-		self.sess.run(tf.initialize_all_variables())
+		self.sess.run(tf.global_variables_initializer())
 		self.saver = tf.train.Saver()
 		self.saver.restore(self.sess,self.weights_file)
 		if self.disp_console : print("Loading complete!" + '\n')
