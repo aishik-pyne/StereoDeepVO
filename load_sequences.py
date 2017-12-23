@@ -17,7 +17,7 @@ class Sequence:
         """
         filename = self.PATH + 'image_{}/'.format(str(camera)) + '{}.png'.format(str(filenumber).zfill(6))
         assert (os.path.isfile(filename)), "File Not Found"
-        return cv2.imread(filename, 0)
+        return cv2.imread(filename)
 
     def get_disparity(self, filenumber):
         img_left = self.get_image(filenumber, camera=0)
